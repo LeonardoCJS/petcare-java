@@ -1,0 +1,399 @@
+{
+  "info": {
+    "name": "PetCare API - Sprint 2",
+    "description": "Coleção de requisições para testar a API PetCare com HATEOAS (Nível 3 de Richardson)",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Tutores",
+      "item": [
+        {
+          "name": "Listar todos os Tutores",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "http://localhost:8080/api/tutores",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["api", "tutores"]
+            }
+          }
+        },
+        {
+          "name": "Obter Tutor por ID",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "http://localhost:8080/api/tutores/1",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["api", "tutores", "1"]
+            }
+          }
+        },
+        {
+          "name": "Criar Novo Tutor",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"nome\": \"João Silva\",\n  \"email\": \"joao@example.com\",\n  \"telefone\": \"11999999999\",\n  \"endereco\": \"Rua A, 123\"\n}"
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/tutores",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["api", "tutores"]
+            }
+          }
+        },
+        {
+          "name": "Atualizar Tutor",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"nome\": \"João Silva Atualizado\",\n  \"email\": \"joao.novo@example.com\",\n  \"telefone\": \"11977777777\",\n  \"endereco\": \"Rua C, 789\"\n}"
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/tutores/1",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["api", "tutores", "1"]
+            }
+          }
+        },
+        {
+          "name": "Deletar Tutor",
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "http://localhost:8080/api/tutores/1",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["api", "tutores", "1"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Pets",
+      "item": [
+        {
+          "name": "Listar todos os Pets",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "http://localhost:8080/api/pets",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["api", "pets"]
+            }
+          }
+        },
+        {
+          "name": "Criar Novo Pet",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"nome\": \"Rex\",\n  \"tipo\": \"Cachorro\",\n  \"raca\": \"Labrador\",\n  \"idade\": 3,\n  \"tutorId\": 1\n}"
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/pets",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["api", "pets"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Dispositivos",
+      "item": [
+        {
+          "name": "Listar todos os Dispositivos",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "http://localhost:8080/api/dispositivos",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["api", "dispositivos"]
+            }
+          }
+        },
+        {
+          "name": "Criar Novo Dispositivo",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"nome\": \"Rastreador GPS\",\n  \"tipo\": \"GPS\",\n  \"modelo\": \"TK102\",\n  \"petId\": 1\n}"
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/dispositivos",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["api", "dispositivos"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Monitoramento",
+      "item": [
+        {
+          "name": "Listar todos os Monitoramentos",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "http://localhost:8080/api/monitoramento",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["api", "monitoramento"]
+            }
+          }
+        },
+        {
+          "name": "Criar Novo Monitoramento",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"descricao\": \"Monitoramento ativo\",\n  \"localizacao\": \"-23.5505,-46.6333\",\n  \"dataHora\": \"2025-11-04T15:30:00\",\n  \"dispositivoId\": 1\n}"
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/monitoramento",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["api", "monitoramento"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Alertas",
+      "item": [
+        {
+          "name": "Listar todos os Alertas",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "http://localhost:8080/api/alertas",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["api", "alertas"]
+            }
+          }
+        },
+        {
+          "name": "Criar Novo Alerta",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"titulo\": \"Pet saiu da zona segura\",\n  \"descricao\": \"Rex saiu da zona de segurança definida\",\n  \"tipo\": \"LOCALIZACAO\",\n  \"severity\": \"ALTO\",\n  \"tutorId\": 1\n}"
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/alertas",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["api", "alertas"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Consultas",
+      "item": [
+        {
+          "name": "Listar todas as Consultas",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "http://localhost:8080/api/consultas",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["api", "consultas"]
+            }
+          }
+        },
+        {
+          "name": "Criar Nova Consulta",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"data\": \"2025-11-10\",\n  \"hora\": \"14:00\",\n  \"motivo\": \"Vacinação anual\",\n  \"tutorId\": 1,\n  \"veterinarioId\": 1,\n  \"petId\": 1\n}"
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/consultas",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["api", "consultas"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Veterinários",
+      "item": [
+        {
+          "name": "Listar todos os Veterinários",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "http://localhost:8080/api/veterinarios",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["api", "veterinarios"]
+            }
+          }
+        },
+        {
+          "name": "Criar Novo Veterinário",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"nome\": \"Dr. Carlos\",\n  \"email\": \"carlos@veterinaria.com\",\n  \"telefone\": \"11666666666\",\n  \"especialidade\": \"Cirurgia\"\n}"
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/veterinarios",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["api", "veterinarios"]
+            }
+          }
+        }
+      ]
+    }
+  ]
+}
